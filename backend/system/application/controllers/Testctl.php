@@ -20,11 +20,12 @@ class Testctl extends CI_Controller {
 
 	public function searchTop()
 	{
-		$data['topic']='Operating systems';
+		$data['topic']=$this->input->get('topic');
+		// $data['topic']='Operating systems';
 
 		$this->load->model('Testmd',$data);
 
-		$data['title']='Search By Topic '
+		$data['title']='Search By Topic ';
 		$data['array']=$this->Testmd->getTop();
 
 		$this->load->view('Testvw',$data);
@@ -36,7 +37,7 @@ class Testctl extends CI_Controller {
 
 		$this->load->model('Testmd',$data);
 
-		$data['title']='Search By Topic '
+		$data['title']='Search By Topic ';
 		$data['array']=$this->Testmd->getTch();
 
 		$this->load->view('Testvw',$data);
